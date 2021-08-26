@@ -7,9 +7,8 @@ def main():
     parser = argparse.ArgumentParser(prog='wallet', description="A Python CLI for managing cryptocurrencies")
 
     # defining arguments for parser object
-    parser.add_argument("-kg", "--keygen", type=str, nargs=0,
-                        metavar="key_name", default=None,
-                        help="Generates public and private key pair")
+    parser.add_argument("-kg", "--keygen", action='store_true',
+                        help="Generates and stores public and private key pair")
 
     parser.add_argument("-s", "--sign", type=str, nargs=2, default=None,
                         metavar=("message", "filename"), help="Signs message and stores in filename")
