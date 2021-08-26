@@ -1,19 +1,28 @@
 import os
-from Crypto.PublicKey import RSA
-from Crypto import Random
+import argparse
+import cryptographic
 
-def key_gen(bits=2048):
-    random_generator = Random.new().read
-    rsa_key = RSA.generate(bits, random_generator)
-    return rsa_key.exportKey(), rsa_key.publickey().exportKey()
 
-def sign:
+def main():
+    # create parser object
+    parser = argparse.ArgumentParser(description="A Python CLI for managing cryptocurrencies")
 
-def verify:
+    # defining arguments for parser object
+    parser.add_argument("-kg", "--keygen", type=str, nargs=1,
+                        metavar="key_name", default=None,
+                        help="Generates public and private key pair under supplied filename")
 
-def encrypt:
+    # parse the arguments from standard input
+    args = parser.parse_args()
 
-def decrypt:
+    # calling functions depending on type of argument
+    if args.keygen is not None:
+        cryptographic.key_gen(args)
+
+
+if __name__ == "__main__":
+    # calling the main function
+    main()
 
 
 
