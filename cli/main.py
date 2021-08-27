@@ -26,10 +26,8 @@ def main():
 
     # calling functions depending on type of argument
     if args.keygen is not None:
-        print(args.keygen)
         cryptographic.key_gen(args.keygen[0])
     if args.sign is not None:
-        print(args.sign)
         cryptographic.sign_and_verify(args.sign[0], args.sign[1])
     if args.encrypt is not None:
         cryptographic.encrypt(args.encrypt[0], args.encrypt[1], args.encrypt[2])
