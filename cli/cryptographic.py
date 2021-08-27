@@ -53,6 +53,9 @@ def sign_and_verify(message, alias):
     # load keys
     private_key, public_key = load_keys(alias)
 
+    # I wanted to be able to save down the signature, then reload it and verify that it
+    # hadn't been tampered with. I couldn't really figure out how to do this so just put the
+    # verification in one function so the signature doesn't need to be saved
     hash = int.from_bytes(sha512(message.encode()).digest(), byteorder='big')
     signature = pow(hash, private_key.d, private_key.n)
 

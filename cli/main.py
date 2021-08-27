@@ -11,11 +11,8 @@ def main():
     parser.add_argument("-kg", "--keygen", type=str, nargs=1, metavar="alias", default=None,
                         help="Generates and stores public and private key pair under supplied alias")
 
-    parser.add_argument("-s", "--sign", type=str, nargs=3, default=None,
-                        metavar=("message", "alias", "filename"), help="Signs message with key and stores in filename")
-
-    parser.add_argument("-v", "--verify", type=str, nargs=3, default=None,
-                        metavar=("message", "filename", "key alias"), help="Signs message and stores in filename")
+    parser.add_argument("-s", "--sign", type=str, nargs=2, default=None,
+                        metavar=("message", "alias"), help="Signs message with key")
 
     parser.add_argument("-e", "--encrypt", type=str, nargs=3, default=None,
                         metavar=("message", "alias", "filename"),

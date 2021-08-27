@@ -1,13 +1,13 @@
 # Overview
 
-The purpose of the wallet is to generate public and private key pairs, and to send and receive cryptocurrencies. It will take the form of a Python command line tool. It will be compatible with both bitcoin and ethereum.
+The purpose of the wallet is to generate public and private key pairs, and to perform some basic cryptographic operations. It will take the form of a Python command line tool.
 
 # Features
 Below are the implementation details of each of the wallet features.
 
 ## Key Generation
 - Generate a random private key (find good source of randomness for this)
-- Use OpenSSL crypto library to generate public key
+- Use crypto library to generate public key
 - Store these in some data structure that is saved to memory - so that we don't lose the keys when we exit the program
 
 ## Key Management
@@ -24,15 +24,3 @@ Below are the implementation details of each of the wallet features.
 
 ## Decrypting Messages
 - Use python cryptography library to decrypt
-
-## Supports Bitcoin
-- https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch06.asciidoc describes transactions
-- Might be helpful to look at https://bitcoinlib.readthedocs.io/en/latest/ and see what I can reuse from here
-
-## Supports Ethereum
-- Use some functionality from https://github.com/ethereum/py-evm
-- Try to write from scratch based on mastering ethereum or eth spec
-
-## HD Wallet
-- If there is time, look into changing the key generation so that the wallet is deterministic
-
